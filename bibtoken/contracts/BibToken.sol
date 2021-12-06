@@ -18,6 +18,7 @@ library SafeMath {
 contract BibToken {
     uint256 public totalSupply;
     string public constant symbol = "BIB";
+    string public constant name = "Bibhash coin";
     uint256 public constant decimals = 18;
 
     mapping(address => uint256) balances;
@@ -81,5 +82,10 @@ contract BibToken {
         );
         emit Transfer(_sender, _recipient, _amount);
         return true;
+    }
+
+    // fallback functions
+    fallback() external payable {
+        revert();
     }
 }
