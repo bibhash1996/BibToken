@@ -2,5 +2,40 @@
   height: 100vh;
   width: 100vw;
   background-color: #f7f7f7;
+  padding: 30px;
   /* background-color: red; */
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.metamask-btn {
+  display: flex;
+  flex-direction: row;
+  height: 46px !important;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 120px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 3px !important;
+  border: 1px solid rgb(184, 180, 180) !important;
+  color: black !important;
+}
+
+.metamask-btn:hover {
+  background-color: rgb(129, 204, 16) !important;
+  border: 1px solid rgb(129, 204, 16) !important;
+  color: white !important;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
 }

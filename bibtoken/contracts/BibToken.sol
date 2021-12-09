@@ -48,12 +48,14 @@ contract BibToken {
 
     function transfer(address _to, uint256 _amount) public returns (bool) {
         require(balances[msg.sender] >= _amount, "Insufficient balance");
-        require(
-            allowances[msg.sender][_to] >= _amount,
-            "Unapproved transaction."
-        );
-        balances[msg.sender] = balances[msg.sender].sub(_amount);
-        balances[_to] = balances[_to].add(_amount);
+        // require(
+        //     allowances[msg.sender][_to] >= _amount,
+        //     "Unapproved transaction."
+        // );
+        // balances[msg.sender] = balances[msg.sender].sub(_amount);
+        // balances[_to] = balances[_to].add(_amount);
+        balances[msg.sender] -= _amount;
+        balances[_to] += _amount;
         emit Transfer(msg.sender, _to, _amount);
         return true;
     }

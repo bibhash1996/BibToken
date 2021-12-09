@@ -7,6 +7,7 @@ contract BuySell {
     address owner;
     // token price for ETH
     uint256 public tokensPerEth = 100;
+    // uint256 public tokensPerEth = 1;
 
     // Event that logs buy operation
     event BuyTokens(address buyer, uint256 amountOfETH, uint256 amountOfTokens);
@@ -35,7 +36,6 @@ contract BuySell {
     function withdraw() public onlyOwner {
         uint256 ownerBalance = address(this).balance;
         require(ownerBalance > 0, "Owner has not balance to withdraw");
-
         (bool sent, ) = msg.sender.call{value: address(this).balance}("");
         require(sent, "Failed to send user balance back to the owner");
     }
