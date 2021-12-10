@@ -12,8 +12,8 @@ contract BuySell {
     // Event that logs buy operation
     event BuyTokens(address buyer, uint256 amountOfETH, uint256 amountOfTokens);
 
-    constructor() {
-        bibToken = new BibToken();
+    constructor(BibToken _bibToken) {
+        bibToken = _bibToken;
         owner = msg.sender;
     }
 
